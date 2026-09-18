@@ -1512,7 +1512,7 @@ a.cp-value:hover { color: var(--gold-light); }
 .hero-slide-shade {
   position: absolute;
   inset: 0;
-  background: linear-gradient(90deg, rgba(20, 58, 68, .88) 0%, rgba(20, 58, 68, .55) 45%, rgba(20, 58, 68, .15) 100%);
+  background: linear-gradient(90deg, rgba(20, 58, 68, .93) 0%, rgba(20, 58, 68, .74) 45%, rgba(20, 58, 68, .42) 100%);
 }
 .hero-slide-body {
   position: absolute;
@@ -2020,3 +2020,11 @@ a.pub-card:hover img { transform: translateY(-5px); box-shadow: var(--shadow-lg)
 @media (max-width: 600px) { .pub-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 
 .faq-group h3 { font-size: clamp(1.2rem, 1.05rem + .5vw, 1.5rem); margin-bottom: .8rem; }
+
+.video-note {
+  padding: .7rem 1rem;
+  font-size: .82rem;
+  color: var(--on-dark-muted);
+  background: var(--emerald-900);
+  text-align: center;
+}

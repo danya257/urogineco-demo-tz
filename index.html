@@ -83,57 +83,77 @@
 
 <!-- HERO -->
 
-<section class="hero">
-  <div class="container hero-grid">
-    <div class="hero-content">
-      <span class="eyebrow reveal">Урогинеколог · д.м.н., профессор</span>
-      <h1 class="reveal" style="--d:.05s">
-        Помогаю женщинам вернуть здоровье <em>и качество жизни</em>
-      </h1>
-      <p class="lead reveal" style="--d:.12s">
-        Деликатно и профессионально. Недержание мочи, пролапс тазовых органов, свищи, кисты и дивертикулы уретры, осложнения после ранее перенесённых операций.
-      </p>
-      <div class="hero-cta reveal" style="--d:.18s">
-        <a href="#contact" class="btn">Записаться на консультацию <i class="fas fa-arrow-right btn-arrow"></i></a>
-        <a href="#services" class="btn btn-ghost">Что я&nbsp;лечу</a>
-      </div>
-      <div class="hero-facts reveal" style="--d:.24s">
-        
-        <div class="hero-fact">
-          <span class="hero-fact-num">30+</span>
-          <span class="hero-fact-label">лет хирургического опыта</span>
-        </div>
-        
-        <div class="hero-fact">
-          <span class="hero-fact-num">20 000+</span>
-          <span class="hero-fact-label">проведённых операций</span>
-        </div>
-        
-        <div class="hero-fact">
-          <span class="hero-fact-num">1</span>
-          <span class="hero-fact-label">авторский патент</span>
-        </div>
-        
-      </div>
-    </div>
-
-    <div class="hero-media reveal" style="--d:.1s">
-      <div class="hero-arch">
-        
-          <img src="/urogineco-demo-tz/media/heroes/gvozdev-hero_dEWe1BQ.jpg" alt="Гвоздев Михаил Юрьевич, врач-урогинеколог" width="700" height="875" fetchpriority="high">
-        
-      </div>
-      <span class="hero-chip"><i class="fas fa-star"></i> Заслуженный врач РФ</span>
-      <div class="hero-badge">
-        <span class="hero-badge-icon"><i class="fas fa-award"></i></span>
-        <div>
-          <div class="hero-badge-title">Автор запатентованной методики</div>
-          <div class="hero-badge-sub">транспозиция уретры</div>
+<section class="hero-slider" aria-roledescription="carousel" aria-label="Главный баннер">
+  <div class="hero-slides">
+    
+    <div class="hero-slide is-active" data-index="0" role="group" aria-roledescription="слайд" aria-label="1 из 2">
+      
+      <video class="hero-slide-media" playsinline muted loop preload="metadata" poster="/urogineco-demo-tz/media/slides/hero-demo-poster.jpg">
+        <source src="/urogineco-demo-tz/media/slides/video/hero-demo.mp4" type="video/mp4">
+      </video>
+      
+      <div class="hero-slide-shade" aria-hidden="true"></div>
+      <div class="container hero-slide-body">
+        <h1 class="hero-slide-title">Гвоздев М.Ю.</h1>
+        <p class="hero-slide-sub">Д.м.н., профессор, урогинеколог. Помогаю женщинам вернуть здоровье и качество жизни — деликатно и профессионально.</p>
+        <div class="hero-cta">
+          <a href="/urogineco-demo-tz/#contact" class="btn">Записаться на консультацию <i class="fas fa-arrow-right btn-arrow"></i></a>
+          <a href="#services" class="btn btn-ghost btn-on-dark">Что я&nbsp;лечу</a>
         </div>
       </div>
     </div>
+    
+    <div class="hero-slide" data-index="1" role="group" aria-roledescription="слайд" aria-label="2 из 2">
+      
+      <img class="hero-slide-media" src="/urogineco-demo-tz/media/slides/slide-events.png" alt="Мероприятия|и выездные приёмы" loading="lazy">
+      
+      <div class="hero-slide-shade" aria-hidden="true"></div>
+      <div class="container hero-slide-body">
+        <h1 class="hero-slide-title">Мероприятия <em>и выездные приёмы</em></h1>
+        <p class="hero-slide-sub">Конференции, выступления, консультации и операции в регионах.</p>
+        <div class="hero-cta">
+          <a href="/urogineco-demo-tz/events/" class="btn">Расписание <i class="fas fa-arrow-right btn-arrow"></i></a>
+          <a href="#services" class="btn btn-ghost btn-on-dark">Что я&nbsp;лечу</a>
+        </div>
+      </div>
+    </div>
+    
   </div>
+
+  
+  <button class="hero-nav prev" type="button" aria-label="Предыдущий слайд"><i class="fas fa-chevron-left"></i></button>
+  <button class="hero-nav next" type="button" aria-label="Следующий слайд"><i class="fas fa-chevron-right"></i></button>
+  <div class="hero-dots" role="tablist" aria-label="Слайды">
+    
+    <button class="hero-dot is-active" type="button" role="tab" data-go="0" aria-label="Слайд 1"></button>
+    
+    <button class="hero-dot" type="button" role="tab" data-go="1" aria-label="Слайд 2"></button>
+    
+  </div>
+  <button class="hero-play" type="button" aria-label="Остановить автопрокрутку" aria-pressed="true"><i class="fas fa-pause"></i></button>
+  
 </section>
+
+<div class="hero-stats-band">
+  <div class="container hero-facts">
+    
+    <div class="hero-fact">
+      <span class="hero-fact-num">30+</span>
+      <span class="hero-fact-label">лет хирургического опыта</span>
+    </div>
+    
+    <div class="hero-fact">
+      <span class="hero-fact-num">20 000+</span>
+      <span class="hero-fact-label">проведённых операций</span>
+    </div>
+    
+    <div class="hero-fact">
+      <span class="hero-fact-num">1</span>
+      <span class="hero-fact-label">авторский патент</span>
+    </div>
+    
+  </div>
+</div>
 
 
 
@@ -579,6 +599,10 @@
     <h3>Тестовая конференция по урогинекологии и реконструктивной хирургии тазового дна</h3>
     <div class="event-place"><i class="fas fa-location-dot"></i>Тестовый город, конгресс-центр</div>
     
+      <video class="event-video" controls playsinline preload="metadata" >
+        <source src="/urogineco-demo-tz/media/events/video/event-demo.mp4" type="video/mp4">
+      </video>
+    
     <div class="event-desc rich"><p>Тестовое описание мероприятия для проверки вёрстки.</p></div>
     
     <div class="event-actions">
@@ -722,7 +746,7 @@
       <h3>Отправить заявку врачу</h3>
       <p class="form-intro">Заявка уходит на&nbsp;личную почту доктора. Можно приложить выписки и&nbsp;результаты обследований.</p>
       <form method="post" action="#" onsubmit="alert('Демо-версия сайта: заявка никуда не отправляется.'); return false;" enctype="multipart/form-data" data-once>
-        <input type="hidden" name="csrfmiddlewaretoken" value="GsCtvYUs9jT6pfD2iPtkQkBSD0JuXqXdhzaY3NkYOuDpytBVQ6YJRSTIp8jiZKam">
+        <input type="hidden" name="csrfmiddlewaretoken" value="Wu988wolUyw4q9EZ4OfHxLf0O0ChWSUiqUT4Wvk3Hl5SHGG7ix0pl73aD9ppgRXe">
         <input type="hidden" name="next" value="/">
         <div class="hp-field" aria-hidden="true">
           <label for="website">Не заполняйте это поле</label>
