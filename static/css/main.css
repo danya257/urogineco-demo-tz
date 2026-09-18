@@ -3,14 +3,14 @@
    ============================================================= */
 
 :root {
-  --cream: #F0F5FD;
-  --cream-2: #DFEBF7;
-  --paper: #FFFFFF;
+  --cream: #F5F9FD;
+  --cream-2: #EAF2FB;
+  --paper: #DFEBF7;
   --ink: #1C2F36;
   --muted: #55666E;
-  --soft: #66787F;
-  --line: #D3E2EF;
-  --line-strong: #B2C8DA;
+  --soft: #5A6C73;
+  --line: #C9DCEE;
+  --line-strong: #AAC5DD;
 
   --emerald: #2A6B78;
   --emerald-600: #35808F;
@@ -163,7 +163,7 @@ strong, b { font-weight: 600; color: var(--ink); }
 }
 .section-head-row .section-head { margin-bottom: 0; }
 
-.bg-paper { background: var(--paper); }
+.bg-paper { background: var(--cream); }
 .bg-cream2 { background: var(--cream-2); }
 .bg-dark {
   background: var(--emerald-900);
@@ -201,7 +201,7 @@ strong, b { font-weight: 600; color: var(--ink); }
   position: absolute;
   inset: 0;
   z-index: -1;
-  background: rgba(223, 235, 247, 0.94);
+  background: rgba(234, 242, 251, 0.94);
   backdrop-filter: saturate(180%) blur(14px);
   -webkit-backdrop-filter: saturate(180%) blur(14px);
   transition: background .3s var(--ease);
@@ -210,7 +210,7 @@ strong, b { font-weight: 600; color: var(--ink); }
   border-bottom-color: var(--line);
   box-shadow: 0 6px 24px rgba(28, 47, 54, 0.06);
 }
-.site-header.scrolled::before { background: rgba(240, 245, 253, 0.97); }
+.site-header.scrolled::before { background: rgba(245, 249, 253, 0.97); }
 .header-inner {
   height: 100%;
   display: flex;
