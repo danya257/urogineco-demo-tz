@@ -3,23 +3,23 @@
    ============================================================= */
 
 :root {
-  --cream: #F5F9FD;
-  --cream-2: #EAF2FB;
+  --cream: #F4F8FB;
+  --cream-2: #E8F1F8;
   --paper: #DFEBF7;
-  --ink: #1C2F36;
-  --muted: #55666E;
-  --soft: #5A6C73;
+  --ink: #1F3540;
+  --muted: #52686F;
+  --soft: #5F7178;
   --line: #C9DCEE;
   --line-strong: #AAC5DD;
 
-  --emerald: #2A6B78;
-  --emerald-600: #35808F;
-  --emerald-700: #215761;
+  --emerald: #1C6E74;
+  --emerald-600: #2D8A90;
+  --emerald-700: #14585E;
   --emerald-900: #143A44;
   --emerald-tint: rgba(42, 107, 120, 0.09);
   --emerald-tint-2: rgba(42, 107, 120, 0.16);
 
-  --gold: #3A6F78;
+  --gold: #37717A;
   --gold-light: #9FD0D6;
   --gold-tint: rgba(58, 111, 120, 0.12);
 
@@ -1977,5 +1977,46 @@ a.cp-value:hover { color: var(--gold-light); }
   background: linear-gradient(90deg, rgba(255, 255, 255, 0), var(--paper));
 }
 
-.faq-group h2 a { display: inline-block; padding: .25rem 0; }
-@media (max-width: 800px) { .faq-group h2 a { padding: .5rem 0; } }
+.faq-group h2 a, .faq-group h3 a { display: inline-block; padding: .25rem 0; }
+@media (max-width: 800px) { .faq-group h2 a, .faq-group h3 a { padding: .55rem 0; } }
+
+/* Типографика карточек по ТЗ: серифный серый заголовок, бирюзовые акценты */
+.service-card h3, .clinic-card h3, .memo-card h3, .useful-card summary h3 {
+  color: #525252;
+}
+.useful-card summary h3 { font-family: var(--serif); font-size: 1.2rem; font-weight: 600; }
+.memo-card .memo-num { color: #B9C7D2; }
+.memo-chip-num { color: #8FA5B4; }
+
+/* ---------- Это может быть полезно ---------- */
+.pub-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: clamp(1rem, 2vw, 1.6rem);
+  margin-top: clamp(2rem, 4vw, 3rem);
+}
+.pub-card {
+  display: grid;
+  gap: .7rem;
+  align-content: start;
+  color: inherit;
+  text-align: center;
+}
+.pub-card img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  object-position: top;
+  border-radius: var(--r-sm);
+  box-shadow: var(--shadow-md);
+  transition: transform .35s var(--ease), box-shadow .35s var(--ease);
+}
+a.pub-card:hover { color: inherit; }
+a.pub-card:hover img { transform: translateY(-5px); box-shadow: var(--shadow-lg); }
+.pub-title { font-size: .88rem; font-weight: 500; line-height: 1.35; text-wrap: balance; }
+.pub-sub { font-size: .78rem; color: var(--soft); }
+@media (max-width: 1000px) { .pub-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (max-width: 600px) { .pub-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+
+.faq-group h3 { font-size: clamp(1.2rem, 1.05rem + .5vw, 1.5rem); margin-bottom: .8rem; }
