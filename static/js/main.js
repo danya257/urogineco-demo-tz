@@ -203,7 +203,23 @@
         var active = n === current;
         sl.classList.toggle('is-active', active);
         var v = sl.querySelector('video');
-        if (v) { if (active) { v.play().catch(function () {}); } else { v.pause(); } }
+        if (v) {
+          if (active) {
+            // при медленной сети play() до загрузки данных отклоняется — повторяем по canplay
+            var attempt = v.play();
+            if (attempt && attempt.catch) {
+              attempt.catch(function () {
+                var again = function () {
+                  v.removeEventListener('canplay', again);
+                  if (sl.classList.contains('is-active')) v.play().catch(function () {});
+                };
+                v.addEventListener('canplay', again);
+              });
+            }
+          } else {
+            v.pause();
+          }
+        }
       });
       dots.forEach(function (d, n) { d.classList.toggle('is-active', n === current); });
     };
