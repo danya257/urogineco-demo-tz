@@ -2070,7 +2070,8 @@ a.pub-card:hover img { transform: translateY(-5px); box-shadow: var(--shadow-lg)
 @media (max-width: 600px) { .creds-row { grid-template-columns: minmax(0, 1fr); } }
 
 /* Обращение врача: колонка текста по левому краю контейнера — вровень с фото под ней */
-.letter-solo .letter-body { max-width: 70ch; }
+/* Обращение врача — на всю ширину фото под ним */
+.letter-solo .letter-body { max-width: none; }
 
 /* Цифры под баннером на телефоне: число в колонке фиксированной ширины */
 @media (max-width: 680px) {
