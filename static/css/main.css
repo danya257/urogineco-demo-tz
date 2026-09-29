@@ -1436,7 +1436,7 @@ a.cp-value:hover { color: var(--gold-light); }
   .letter-media { max-width: 320px; }
 }
 
-.letter-grid.letter-solo { grid-template-columns: minmax(0, 1fr); max-width: 820px; margin-inline: auto; }
+.letter-grid.letter-solo { grid-template-columns: minmax(0, 1fr); }
 .photo-band {
   width: 100%;
   border-radius: var(--r-lg);
@@ -1563,16 +1563,26 @@ a.cp-value:hover { color: var(--gold-light); }
   gap: .5rem;
 }
 .hero-dot {
+  /* сама кнопка прозрачная и крупная, видимая полоска — во ::before */
+  width: 34px;
+  height: 32px;
+  border: 0;
+  padding: 0;
+  background: none;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+}
+.hero-dot::before {
+  content: '';
+  display: block;
   width: 34px;
   height: 4px;
-  border: 0;
   border-radius: 999px;
   background: rgba(232, 241, 244, .35);
-  cursor: pointer;
-  padding: 0;
   transition: background .25s var(--ease);
 }
-.hero-dot.is-active { background: var(--gold-light); }
+.hero-dot.is-active::before { background: var(--gold-light); }
 .hero-play {
   position: absolute;
   right: clamp(.75rem, 2vw, 2rem);
@@ -1587,7 +1597,7 @@ a.cp-value:hover { color: var(--gold-light); }
   font-size: .78rem;
 }
 .hero-stats-band { background: var(--cream-2); border-bottom: 1px solid var(--line); }
-.hero-stats-band .hero-facts { margin: 0; border-top: 0; padding: clamp(1.4rem, 3vw, 2.2rem) 0; }
+.hero-stats-band .hero-facts { margin-block: 0; border-top: 0; padding-block: clamp(1.4rem, 3vw, 2.2rem); }
 
 /* ---------- Карточка направления как ссылка ---------- */
 .service-card.is-link { display: flex; flex-direction: column; color: inherit; }
@@ -2027,4 +2037,48 @@ a.pub-card:hover img { transform: translateY(-5px); box-shadow: var(--shadow-lg)
   color: var(--on-dark-muted);
   background: var(--emerald-900);
   text-align: center;
+}
+
+/* ---------- «Обо мне»: видео справа, регалии строкой под блоком ---------- */
+.about-video {
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  background: var(--emerald-900);
+  box-shadow: var(--shadow-md);
+}
+.about-video video {
+  display: block;
+  width: 100%;
+  height: auto;
+  /* вертикальный кадр: под будущее видео врача и чтобы колонка не пустовала */
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+}
+@media (max-width: 900px) { .about-video video { aspect-ratio: 16 / 9; } }
+.about-video .video-note {
+  background: rgba(232, 241, 244, .08);
+  color: var(--on-dark-muted);
+}
+.creds-row {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: clamp(2.2rem, 4vw, 3.2rem);
+}
+.creds-row .cred { height: 100%; }
+@media (max-width: 1000px) { .creds-row { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 600px) { .creds-row { grid-template-columns: minmax(0, 1fr); } }
+
+/* Обращение врача: колонка текста по левому краю контейнера — вровень с фото под ней */
+.letter-solo .letter-body { max-width: 70ch; }
+
+/* Цифры под баннером на телефоне: число в колонке фиксированной ширины */
+@media (max-width: 680px) {
+  .hero-fact, .hero-fact + .hero-fact {
+    display: grid;
+    grid-template-columns: 7.5rem minmax(0, 1fr);
+    align-items: baseline;
+    gap: .8rem;
+  }
+  .hero-fact-num { min-width: 0; }
 }
